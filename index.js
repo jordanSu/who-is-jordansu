@@ -16,7 +16,11 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req, res) {
 	console.log(req);
-	res.status(200).end(req.message.text);
+	//res.status(200).end(req.message.text);
+	if(req.message.text != undefined)
+		res.status(200).end(req.message.text);
+	else
+		res.status(200);
 });
 
 var port = Number(process.env.PORT || 8080);
