@@ -9,7 +9,14 @@ const app = express();
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
-	res.send('Hello World');
+	//res.send('Server alive!');
+	res.status(200).end("Server alive!");
+	console.log(req);
+});
+
+app.post('/', function(req, res) {
+	console.log(req);
+	res.status(200).end(req.message.text);
 });
 
 var port = Number(process.env.PORT || 8080);
