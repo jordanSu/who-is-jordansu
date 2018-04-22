@@ -4,9 +4,11 @@ const PORT = process.env.PORT | 8080;
 
 var express = require('express');
 var logfmt = require('logfmt');
+var bodyParser = require('body-parser');
 const app = express();
 
 app.use(logfmt.requestLogger());
+app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
 	//res.send('Server alive!');
