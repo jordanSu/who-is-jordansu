@@ -1,0 +1,27 @@
+{
+  "name": "intro_bot",
+  "version": "1.0.0",
+  "description": "For Line Bot 誰是Jordan Su?",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanSu/who-is-jordansu.git"
+  },
+  "keywords": [
+    "chatbot"
+  ],
+  "author": "Jordan Su",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanSu/who-is-jordansu/issues"
+  },
+  "homepage": "https://github.com/jordanSu/who-is-jordansu#readme",
+  "dependencies": {
+    "@line/bot-sdk": "^6.0.1",
+    "express": "^4.16.3",
+    "logfmt": "^1.2.0"
+  }
+}
