@@ -23,8 +23,8 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-	console.log(req.body.message.text);
-	var message = {type: 'text', text: req.body.message.text};
+	console.log(req.body);
+	var message = {type: 'text', text: req.body};
 	client.replyMessage(req.body.replyToken, message)
 			.then(() => {
 				console.log("Message: " + message.text);
