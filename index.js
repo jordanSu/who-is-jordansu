@@ -9,7 +9,6 @@ const app = express();
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
-<<<<<<< HEAD
 	//res.send('Server alive!');
 	res.status(200).end("Server alive!");
 	console.log(req);
