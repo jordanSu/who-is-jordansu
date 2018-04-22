@@ -6,12 +6,12 @@ const express = require('express');
 const logfmt = require('logfmt');
 const bodyParser = require('body-parser');
 const app = express();
-/*
+
 const line = require('@line/bot-sdk');
 const client = new line.Client({
   channelAccessToken: TOKEN
 });
-*/
+
 
 app.use(logfmt.requestLogger());
 app.use(bodyParser.json());
