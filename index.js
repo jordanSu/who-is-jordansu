@@ -23,9 +23,10 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-	console.log(req.body);
-	var message = {type: 'text', text: req.body};
-	client.replyMessage(req.body.replyToken, message)
+	var webhook_obj = req.body.events[0];
+	console.log(webhook_obj);
+	var message = {type: 'text', text: webhook_obj.message.text};
+	client.replyMessage(webhook_obj.replyToken, message)
 			.then(() => {
 				console.log("Message: " + message.text);
 			})
