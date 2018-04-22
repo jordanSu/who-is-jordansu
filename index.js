@@ -3,11 +3,17 @@ const SECRET = process.env.channel_secret;
 const PORT = process.env.PORT | 8080;
 
 var express = require('express');
+var logfmt = require('logfmt');
 const app = express();
 
-var server = app.listen(PORT, function() {
-	var port = server.address().port;
-	console.log("App now running on port", port);
+app.use(logfmt.requestLogger());
+
+app.get('/', function(req, res) {
+	res.send('Hello World');
 });
 
+var port = Number(process.env.PORT || 8080);
+app.listen(port, function() {
+	console.log("Listening on ", port);
+});
 
