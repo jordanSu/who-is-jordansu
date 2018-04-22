@@ -6,11 +6,12 @@ const express = require('express');
 const logfmt = require('logfmt');
 const bodyParser = require('body-parser');
 const app = express();
-
+/*
 const line = require('@line/bot-sdk');
 const client = new line.Client({
   channelAccessToken: TOKEN
 });
+*/
 
 app.use(logfmt.requestLogger());
 app.use(bodyParser.json());
@@ -22,14 +23,14 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-	console.log(req.body.text);
-	var message = {type: 'text', text: req.body.text};
+	console.log(req.body.message.text);
+	var message = {type: 'text', text: req.body.message.text};
 	client.replyMessage(req.body.replyToken, message)
 			.then(() => {
 				console.log("Message: " + message.text);
 			})
 			.catch((err) => {
-				console.err("Send reply error!");
+				console.log("Send reply error!");
 			})
 });
 
