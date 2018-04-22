@@ -11,11 +11,11 @@ app.use(logfmt.requestLogger());
 app.get('/', function(req, res) {
 	//res.send('Server alive!');
 	res.status(200).end("Server alive!");
-	console.log(req);
+	console.log(req.body);
 });
 
 app.post('/', function(req, res) {
-	console.log(req);
+	console.log(req.body);
 	res.status(200).end("你好");
 });
 
