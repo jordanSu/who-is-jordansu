@@ -56,7 +56,7 @@ function getCarousell() {
             		}
           		},
           		{
-            		"imageUrl": "http://akvassociate.com/advance-admin/image/mortarboard.png",
+            		"imageUrl": "https://cdn3.iconfinder.com/data/icons/higher-education-icon-set/128/graduationcap.png",
             		"action": {
               			"type": "message",
               			"label": "學歷",
