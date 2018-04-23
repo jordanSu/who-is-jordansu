@@ -12,9 +12,6 @@ const client = new line.Client({
   channelAccessToken: TOKEN
 });
 
-const line
-
-
 app.use(logfmt.requestLogger());
 app.use(bodyParser.json());
 
