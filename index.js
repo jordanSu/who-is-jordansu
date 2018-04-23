@@ -40,6 +40,7 @@ app.listen(port, function() {
 });
 
 function getCarousell() {
+	// 內容：履歷，學歷，實習經驗，比賽或其他得獎經歷
 	return {
 		type: "template",
 		altText: "你可以做些什麼？",
@@ -47,27 +48,35 @@ function getCarousell() {
 			type: "image_carousel",
 			columns: [
           		{
-            		"imageUrl": "https://example.com/bot/images/item1.jpg",
+            		"imageUrl": "https://cdn4.iconfinder.com/data/icons/staff-management-vol-1/72/34-256.png",
             		"action": {
-              			"type": "postback",
-              			"label": "Buy",
-              			"data": "action=buy&itemid=111"
+              			"type": "uri",
+              			"label": "看看履歷",
+              			"uri": "https://raw.githubusercontent.com/jordanSu/who-is-jordansu/master/Resume.pdf"
             		}
           		},
           		{
-            		"imageUrl": "https://example.com/bot/images/item2.jpg",
+            		"imageUrl": "https://cdn3.iconfinder.com/data/icons/school-icons-3/512/Graduation_Hat-256.png",
             		"action": {
               			"type": "message",
-              			"label": "Yes",
+              			"label": "學歷",
               			"text": "yes"
             		}
           		},
           		{
-            		"imageUrl": "https://example.com/bot/images/item3.jpg",
+            		"imageUrl": "https://cdn3.iconfinder.com/data/icons/mind-process/64/29_experience_gain-256.png",
             		"action": {
-              			"type": "uri",
-              			"label": "View detail",
-              			"uri": "http://example.com/page/222"
+              			"type": "message",
+              			"label": "實習經驗",
+              			"text": "http://example.com/page/222"
+            		}
+          		},
+				{
+            		"imageUrl": "https://cdn2.iconfinder.com/data/icons/essentials-volume-3/128/medal-3-256.png",
+            		"action": {
+              			"type": "message",
+              			"label": "比賽與得獎經歷",
+              			"text": "http://example.com/page/222"
             		}
           		}
       		]
