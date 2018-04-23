@@ -42,6 +42,7 @@ app.listen(port, function() {
 function getCarousell() {
 	return {
 		type: "template",
+		altText: "你可以做些什麼？",
 		template: {
 			type: "image_carousel",
 			columns: [
