@@ -5,9 +5,12 @@ const PORT = process.env.PORT | 8080;
 const express = require('express');
 const logfmt = require('logfmt');
 const bodyParser = require('body-parser');
-const app = express();
-
 const line = require('@line/bot-sdk');
+const fs = require('fs');
+
+const personal_data = JSON.parse(fs.readFileSync('introduction.json', 'utf8'));
+
+const app = express();
 const client = new line.Client({
   channelAccessToken: TOKEN
 });
@@ -51,7 +54,7 @@ function getCarousell() {
           		{
             		"thumbnailImageUrl": "https://cdn1.iconfinder.com/data/icons/business-seo-vol-1/512/CV_Contract_Agreement_Resume_Paper_Document-512.png",
 					"imageBackgroundColor": "#009999",
-					"text": "您可以'查看我的履歷'～",
+					"text": "您可以查看我的履歷～",
 					"actions": [
 						{
               				"type": "uri",
@@ -63,12 +66,12 @@ function getCarousell() {
           		{
             		"thumbnailImageUrl": "https://cdn3.iconfinder.com/data/icons/higher-education-icon-set/128/graduationcap.png",
 					"imageBackgroundColor": "#009999",
-					"text": "您可以'查看我的學歷'～",
+					"text": "您可以查看我的學歷～",
 					"actions": [
 						{
               				"type": "message",
               				"label": "看看學歷",
-              				"text": "yes"
+              				"text": personal_data.education
             			}
 					]
           		},
@@ -80,7 +83,7 @@ function getCarousell() {
 						{
               				"type": "message",
               				"label": "看看實習經驗",
-              				"text": "http://example.com/page/222"
+              				"text": personal_data.internship
             			}
 					]
           		},
@@ -92,7 +95,7 @@ function getCarousell() {
 						{
               				"type": "message",
               				"label": "比賽與得獎經歷",
-              				"text": "http://example.com/page/222"
+              				"text": personal_data.award
             			}
 					]
           		}
