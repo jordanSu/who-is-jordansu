@@ -51,6 +51,7 @@ function getCarousell() {
           		{
             		"thumbnailImageUrl": "https://image.freepik.com/free-icon/resume-document_318-100353.jpg",
 					"imageBackgroundColor": "#FFFFFF",
+					"text": "看看履歷",
 					"actions": [
 						{
               				"type": "uri",
@@ -62,6 +63,7 @@ function getCarousell() {
           		{
             		"thumbnailImageUrl": "https://cdn3.iconfinder.com/data/icons/higher-education-icon-set/128/graduationcap.png",
 					"imageBackgroundColor": "#FFFFFF",
+					"text": "學歷",
 					"action": [
 						{
               				"type": "message",
@@ -73,6 +75,7 @@ function getCarousell() {
           		{
             		"thumbnailImageUrl": "https://cdn.iconscout.com/public/images/icon/premium/png-256/sharing-experience-thought-communication-relation-348938d2d9d609f5-256x256.png",
 					"imageBackgroundColor": "#FFFFFF",
+					"text": "實習經驗",
 					"action": [
 						{
               				"type": "message",
@@ -84,6 +87,7 @@ function getCarousell() {
 				{
             		"thumbnailImageUrl": "https://cdn4.iconfinder.com/data/icons/trophy-and-awards-1/64/Icon_Medal_Trophy_Awards_Blue-256.png",
 					"imageBackgroundColor": "#FFFFFF",
+					"text": "比賽與得獎經歷",
 					"action": [
 						{
               				"type": "message",
