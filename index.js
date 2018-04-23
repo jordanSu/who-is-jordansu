@@ -49,7 +49,7 @@ function getCarousell() {
 			imageSize: "contain",
 			columns: [
           		{
-            		"thumbnailImageUrl": "https://image.freepik.com/free-icon/resume-document_318-100353.jpg",
+            		"thumbnailImageUrl": "https://cdn1.iconfinder.com/data/icons/business-seo-vol-1/512/CV_Contract_Agreement_Resume_Paper_Document-512.png",
 					"imageBackgroundColor": "#009999",
 					"text": "您可以'查看我的履歷'～",
 					"actions": [
