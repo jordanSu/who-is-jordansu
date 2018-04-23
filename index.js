@@ -50,7 +50,7 @@ function getCarousell() {
 			columns: [
           		{
             		"thumbnailImageUrl": "https://image.freepik.com/free-icon/resume-document_318-100353.jpg",
-					"imageBackgroundColor": "#FFFFFF",
+					"imageBackgroundColor": "#009999",
 					"text": "您可以'查看我的履歷'～",
 					"actions": [
 						{
@@ -62,7 +62,7 @@ function getCarousell() {
           		},
           		{
             		"thumbnailImageUrl": "https://cdn3.iconfinder.com/data/icons/higher-education-icon-set/128/graduationcap.png",
-					"imageBackgroundColor": "#FFFFFF",
+					"imageBackgroundColor": "#009999",
 					"text": "您可以'查看我的學歷'～",
 					"actions": [
 						{
@@ -74,7 +74,7 @@ function getCarousell() {
           		},
           		{
             		"thumbnailImageUrl": "https://cdn.iconscout.com/public/images/icon/premium/png-256/sharing-experience-thought-communication-relation-348938d2d9d609f5-256x256.png",
-					"imageBackgroundColor": "#FFFFFF",
+					"imageBackgroundColor": "#009999",
 					"text": "您可以'了解我的實習經驗'～",
 					"actions": [
 						{
@@ -86,7 +86,7 @@ function getCarousell() {
           		},
 				{
             		"thumbnailImageUrl": "https://cdn4.iconfinder.com/data/icons/trophy-and-awards-1/64/Icon_Medal_Trophy_Awards_Blue-256.png",
-					"imageBackgroundColor": "#FFFFFF",
+					"imageBackgroundColor": "#009999",
 					"text": "您可以'了解我的比賽與得獎經歷'～",
 					"actions": [
 						{
