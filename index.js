@@ -48,7 +48,7 @@ function getCarousell() {
 			type: "image_carousel",
 			columns: [
           		{
-            		"imageUrl": "https://cdn4.iconfinder.com/data/icons/staff-management-vol-1/72/34-256.png",
+            		"imageUrl": "https://image.freepik.com/free-icon/resume-document_318-100353.jpg",
             		"action": {
               			"type": "uri",
               			"label": "看看履歷",
@@ -56,7 +56,7 @@ function getCarousell() {
             		}
           		},
           		{
-            		"imageUrl": "https://cdn3.iconfinder.com/data/icons/school-icons-3/512/Graduation_Hat-256.png",
+            		"imageUrl": "http://akvassociate.com/advance-admin/image/mortarboard.png",
             		"action": {
               			"type": "message",
               			"label": "學歷",
@@ -64,7 +64,7 @@ function getCarousell() {
             		}
           		},
           		{
-            		"imageUrl": "https://cdn3.iconfinder.com/data/icons/mind-process/64/29_experience_gain-256.png",
+            		"imageUrl": "https://cdn.iconscout.com/public/images/icon/premium/png-256/sharing-experience-thought-communication-relation-348938d2d9d609f5-256x256.png",
             		"action": {
               			"type": "message",
               			"label": "實習經驗",
@@ -72,7 +72,7 @@ function getCarousell() {
             		}
           		},
 				{
-            		"imageUrl": "https://cdn2.iconfinder.com/data/icons/essentials-volume-3/128/medal-3-256.png",
+            		"imageUrl": "https://cdn4.iconfinder.com/data/icons/trophy-and-awards-1/64/Icon_Medal_Trophy_Awards_Blue-256.png",
             		"action": {
               			"type": "message",
               			"label": "比賽與得獎經歷",
