@@ -59,13 +59,13 @@ module.exports = {
     		}
     	};
     },
-    parseMessage: function(message) {
+    parseMessage: function(keywords_list, message) {
         for(var keyword in keywords_list) {
     		if(keywords_list[keyword].some((word) => message.includes(word)))
     			return keyword;
     	}
     },
-    getReplyMessage: function(keyword) {
+    getReplyMessage: function(personal_data, keyword) {
         var replyMessage = [];
     	switch(keyword) {
     		case "cv":
