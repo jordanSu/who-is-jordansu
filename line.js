@@ -94,6 +94,7 @@ module.exports = {
     			replyMessage.push({type: 'text', text: personal_data.who});
     		case "interest":
     			replyMessage.push({type: 'text', text: personal_data.interest});
+                break;
     		default:
     			replyMessage.push({type: 'text', text: "您可以透過以下了解更多我的資訊喔～"});
     			replyMessage.push(module.exports.getCarousell(personal_data));
