@@ -99,6 +99,6 @@ module.exports = {
     			replyMessage.push(module.exports.getCarousell(personal_data));
     			break;
     	}
-    	return replyMessge;
+    	return replyMessage;
     }
 };

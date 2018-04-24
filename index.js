@@ -41,7 +41,7 @@ app.post('/', function(req, res) {
 		console.log(webhook_obj);
 
 		var keyword = func.parseMessage(keywords_list, webhook_obj.message.text);
-		var replyMessge = func.getReplyMessage(personal_data, keyword);
+		var replyMessage = func.getReplyMessage(personal_data, keyword);
 
 		//var message = {type: 'text', text: webhook_obj.message.text};
 		client.replyMessage(webhook_obj.replyToken, replyMessage)
