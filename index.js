@@ -52,7 +52,7 @@ app.post('/', function(req, res) {
 				replyMessage.push({type: 'text', text: personal_data.education});
 				break;
 			case "award":
-				replyMessage.push({type: 'text', text: "Hello, 這是我的比賽與得獎經歷喔～"});
+				replyMessage.push({type: 'text', text: "Hello\n這是我的比賽與得獎經歷喔～"});
 				replyMessage.push({type: 'text', text: personal_data.award});
 				break;
 			case "internship":
@@ -61,11 +61,8 @@ app.post('/', function(req, res) {
 				break;
 			case "who":
 				replyMessage.push({type: 'text', text: personal_data.who});
-				replyMessage.push({type: 'text', text: "您可以透過以下了解更多我的資訊喔～"});
-				replyMessage.push(getCarousell());
-				break;
 			default:
-				replyMessage.push({type: 'text', text: "對不起，不太理解您的意思。您可以透過以下了解更多我的資訊喔～"});
+				replyMessage.push({type: 'text', text: "您可以透過以下了解更多我的資訊喔～"});
 				replyMessage.push(getCarousell());
 				break;
 		}
@@ -114,7 +111,7 @@ function getCarousell() {
 						{
               				"type": "message",
               				"label": "看看學歷",
-              				"text": personal_data.education
+              				"text": "看看學歷"
             			}
 					]
           		},
@@ -126,7 +123,7 @@ function getCarousell() {
 						{
               				"type": "message",
               				"label": "看看實習經驗",
-              				"text": personal_data.internship
+              				"text": "看看實習經驗"
             			}
 					]
           		},
@@ -138,7 +135,7 @@ function getCarousell() {
 						{
               				"type": "message",
               				"label": "比賽與得獎經歷",
-              				"text": personal_data.award
+              				"text": "比賽與得獎經歷"
             			}
 					]
           		}
