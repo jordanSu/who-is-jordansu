@@ -12,6 +12,7 @@ const crypto = require('crypto')
 const personal_data = JSON.parse(fs.readFileSync('introduction.json', 'utf8'));
 const keyword = JSON.parse(fs.readFileSync('keyword.json', 'utf8'));
 
+
 const app = express();
 const client = new line.Client({
   channelAccessToken: TOKEN
@@ -27,7 +28,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-	var signature = crypto.createHmac("sha256", SECRET).update(Buffer.from(JSON.stringfy(req.body), 'utf8')).digest('base64');
+	var signature = crypto.createHmac("sha256", SECRET).update(Buffer.from(JSON.stringify(req.body), 'utf8')).digest('base64');
 	if (signature != req.header('X-Line-Signature')) {
 		console.log("Authorization error");
 		console.log("X-Line-Signature", req.header('X-Line-Signature'));
