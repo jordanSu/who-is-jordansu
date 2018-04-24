@@ -10,7 +10,7 @@ const fs = require('fs');
 const crypto = require('crypto')
 
 const personal_data = JSON.parse(fs.readFileSync('introduction.json', 'utf8'));
-const keyword = JSON.parse(fs.readFileSync('keyword.json', 'utf8'));
+const keywords_list = JSON.parse(fs.readFileSync('keyword.json', 'utf8'));
 
 
 const app = express();
@@ -30,16 +30,41 @@ app.get('/', function(req, res) {
 app.post('/', function(req, res) {
 	var signature = crypto.createHmac("sha256", SECRET).update(Buffer.from(JSON.stringify(req.body), 'utf8')).digest('base64');
 	if (signature != req.header('X-Line-Signature')) {
-		console.log("Authorization error");
-		console.log("X-Line-Signature", req.header('X-Line-Signature'));
-		console.log("My signature", signature);
+		console.error("Authorization error");
+		console.error("X-Line-Signature", req.header('X-Line-Signature'));
+		console.error("My signature", signature);
 		res.status(401).end();
 	}
 	else {
+		var replyMessage = [];
 		var webhook_obj = req.body.events[0];
 		console.log(webhook_obj);
-		var message = {type: 'text', text: webhook_obj.message.text};
-		client.replyMessage(webhook_obj.replyToken, [message, getCarousell()])
+
+		var keyword = parseMessage(webhook_obj.message.text);
+		switch(keyword) {
+			case "cv":
+				replyMessage.push({type: 'text', text: personal_data.cv});
+				break;
+			case "education":
+				replyMessage.push({type: 'text', text: personal_data.education});
+				break;
+			case "award":
+				replyMessage.push({type: 'text', text: personal_data.award});
+				break;
+			case "internship":
+				replyMessage.push({type: 'text', text: personal_data.internship});
+				break;
+			case "who":
+				replyMessage.push({type: 'text', text: personal_data.who});
+				replyMessage.push(getCarousell());
+				break;
+			default:
+				replyMessage.push({type: 'text', text: "對不起，不太理解您的意思。您可以透過以下了解更多我的資訊喔？"});
+				replyMessage.push(getCarousell());
+				break;
+		}
+		//var message = {type: 'text', text: webhook_obj.message.text};
+		client.replyMessage(webhook_obj.replyToken, replyMessage)
 				.then(() => {
 					console.log("Message: " + message.text);
 				})
@@ -71,7 +96,7 @@ function getCarousell() {
 						{
               				"type": "uri",
               				"label": "看看履歷",
-              				"uri": "https://raw.githubusercontent.com/jordanSu/who-is-jordansu/master/Resume.pdf"
+              				"uri": personal_data.cv
 						},
 					]
           		},
@@ -117,5 +142,8 @@ function getCarousell() {
 }
 
 function parseMessage(message) {
-
+	for(var keyword in keywords_list) {
+		if(keywords_list[keyword].some((word) => message.includes(word)))
+			console.log(keyword);
+	}
 }
