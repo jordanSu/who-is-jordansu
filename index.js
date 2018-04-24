@@ -44,23 +44,28 @@ app.post('/', function(req, res) {
 		var keyword = parseMessage(webhook_obj.message.text);
 		switch(keyword) {
 			case "cv":
+				replyMessage.push({type: 'text', text: "Hello, 這是我的履歷連結喔～"});
 				replyMessage.push({type: 'text', text: personal_data.cv});
 				break;
 			case "education":
+				replyMessage.push({type: 'text', text: "Hello, 這是我的學歷唷～"});
 				replyMessage.push({type: 'text', text: personal_data.education});
 				break;
 			case "award":
+				replyMessage.push({type: 'text', text: "Hello, 這是我的比賽與得獎經歷喔～"});
 				replyMessage.push({type: 'text', text: personal_data.award});
 				break;
 			case "internship":
+				replyMessage.push({type: 'text', text: "Hello, 這是我的實習經驗喔～"});
 				replyMessage.push({type: 'text', text: personal_data.internship});
 				break;
 			case "who":
 				replyMessage.push({type: 'text', text: personal_data.who});
+				replyMessage.push({type: 'text', text: "您可以透過以下了解更多我的資訊喔～"});
 				replyMessage.push(getCarousell());
 				break;
 			default:
-				replyMessage.push({type: 'text', text: "對不起，不太理解您的意思。您可以透過以下了解更多我的資訊喔？"});
+				replyMessage.push({type: 'text', text: "對不起，不太理解您的意思。您可以透過以下了解更多我的資訊喔～"});
 				replyMessage.push(getCarousell());
 				break;
 		}
