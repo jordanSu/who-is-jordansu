@@ -27,7 +27,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-	var signature = crypto.createHmac("SHA256", SECRET).update(req.body.toString()).digest('base64');
+	var signature = crypto.createHmac("sha256", SECRET).update(Buffer.from(JSON.stringfy(req.body), 'utf8')).digest('base64');
 	if (signature != req.header('X-Line-Signature')) {
 		console.log("Authorization error");
 		console.log("X-Line-Signature", req.header('X-Line-Signature'));
