@@ -28,8 +28,12 @@ app.get('/', function(req, res) {
 
 app.post('/', function(req, res) {
 	var signature = crypto.createHmac("SHA256", SECRET).update(req.body.toString()).digest('base64');
-	if (signature != req.header('X-Line-Signature'))
+	if (signature != req.header('X-Line-Signature')) {
+		console.log("Authorization error");
+		console.log("X-Line-Signature", req.header('X-Line-Signature'));
+		console.log("My signature", signature);
 		res.status(401).end();
+	}
 	else {
 		var webhook_obj = req.body.events[0];
 		console.log(webhook_obj);
@@ -112,5 +116,5 @@ function getCarousell() {
 }
 
 function parseMessage(message) {
-	
+
 }
