@@ -54,7 +54,6 @@ app.post('/', function(req, res) {
 					});
 		}
 		else if (webhook_obj.type == "join" || webhook_obj.type == "follow") {
-			console.log(webhook_obj.source.userId, RICHMENU_ID);
 			client.linkRichMenuToUser(webhook_obj.source.userId, RICHMENU_ID);
 		}
 	}
