@@ -145,6 +145,6 @@ function getCarousell() {
 function parseMessage(message) {
 	for(var keyword in keywords_list) {
 		if(keywords_list[keyword].some((word) => message.includes(word)))
-			console.log(keyword);
+			return keyword;
 	}
 }
