@@ -14,11 +14,10 @@ const personal_data = JSON.parse(fs.readFileSync('introduction.json', 'utf8'));
 const keywords_list = JSON.parse(fs.readFileSync('keyword.json', 'utf8'));
 
 const app = express();
-/*
 const client = new line.Client({
   channelAccessToken: TOKEN
 });
-*/
+
 
 app.use(logfmt.requestLogger());
 app.use(bodyParser.json());
@@ -41,8 +40,8 @@ app.post('/', function(req, res) {
 		var webhook_obj = req.body.events[0];
 		console.log(webhook_obj);
 
-		var keyword = func.parseMessage(webhook_obj.message.text);
-		var replyMessge = func.getReplyMessage(keyword);
+		var keyword = func.parseMessage(keywords_list, webhook_obj.message.text);
+		var replyMessge = func.getReplyMessage(personal_data, keyword);
 
 		//var message = {type: 'text', text: webhook_obj.message.text};
 		client.replyMessage(webhook_obj.replyToken, replyMessage)
