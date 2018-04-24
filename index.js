@@ -18,6 +18,7 @@ const client = new line.Client({
   channelAccessToken: TOKEN
 });
 
+
 app.use(logfmt.requestLogger());
 app.use(bodyParser.json());
 
@@ -76,7 +77,7 @@ app.post('/', function(req, res) {
 
 var port = Number(process.env.PORT || 8080);
 app.listen(port, function() {
-	console.log("Listening on ", port);
+	console.log("Listening on", port);
 });
 
 function getCarousell() {
