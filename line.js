@@ -1,5 +1,5 @@
 module.exports = {
-    getCarousell: function() {
+    getCarousell: function(personal_data) {
         return {
     		type: "template",
     		altText: "你可以做些什麼？",
@@ -96,7 +96,7 @@ module.exports = {
     			replyMessage.push({type: 'text', text: personal_data.interest});
     		default:
     			replyMessage.push({type: 'text', text: "您可以透過以下了解更多我的資訊喔～"});
-    			replyMessage.push(module.exports.getCarousell());
+    			replyMessage.push(module.exports.getCarousell(personal_data));
     			break;
     	}
     	return replyMessge;
