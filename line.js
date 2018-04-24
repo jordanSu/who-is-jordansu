@@ -96,7 +96,7 @@ module.exports = {
     			replyMessage.push({type: 'text', text: personal_data.interest});
     		default:
     			replyMessage.push({type: 'text', text: "您可以透過以下了解更多我的資訊喔～"});
-    			replyMessage.push(getCarousell());
+    			replyMessage.push(module.exports.getCarousell());
     			break;
     	}
     	return replyMessge;
