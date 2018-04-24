@@ -1,6 +1,7 @@
 const TOKEN = process.env.access_token;
 const SECRET = process.env.channel_secret;
 const PORT = process.env.PORT | 8080;
+const RICHMENU_ID = process.env.richmenu_id;
 
 const express = require('express');
 const logfmt = require('logfmt');
@@ -17,7 +18,6 @@ const app = express();
 const client = new line.Client({
   channelAccessToken: TOKEN
 });
-
 
 app.use(logfmt.requestLogger());
 app.use(bodyParser.json());
@@ -40,17 +40,22 @@ app.post('/', function(req, res) {
 		var webhook_obj = req.body.events[0];
 		console.log(webhook_obj);
 
-		var keyword = func.parseMessage(keywords_list, webhook_obj.message.text);
-		var replyMessage = func.getReplyMessage(personal_data, keyword);
+		if (webhook_obj.type = "message") {
+			var keyword = func.parseMessage(keywords_list, webhook_obj.message.text);
+			var replyMessage = func.getReplyMessage(personal_data, keyword);
 
-		//var message = {type: 'text', text: webhook_obj.message.text};
-		client.replyMessage(webhook_obj.replyToken, replyMessage)
-				.then(() => {
-					console.log("Message: " + message.text);
-				})
-				.catch((err) => {
-					console.log("Send reply error!");
-				});
+			//var message = {type: 'text', text: webhook_obj.message.text};
+			client.replyMessage(webhook_obj.replyToken, replyMessage)
+					.then(() => {
+						console.log("Message: " + message.text);
+					})
+					.catch((err) => {
+						console.log("Send reply error!");
+					});
+		}
+		else if (webhook_obj.type = "join") {
+			client.linkRichMenuToUser(webhook_obj.source.userId, RICHMENU_ID);
+		}
 	}
 });
 
