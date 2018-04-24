@@ -53,7 +53,7 @@ app.post('/', function(req, res) {
 						console.log("Send reply error!");
 					});
 		}
-		else if (webhook_obj.type = "join") {
+		else if (webhook_obj.type == "join" || webhook_obj.type == "follow") {
 			client.linkRichMenuToUser(webhook_obj.source.userId, RICHMENU_ID);
 		}
 	}
